@@ -1,4 +1,5 @@
-import { FETCH_POSTS, DELETE_POST } from '../actions/posts';
+import { FETCH_POSTS, DELETE_POST, SHUFFLE_POSTS } from '../actions/posts';
+import { shuffleArray } from '../../utilities';
 
 const initialState = {
   posts: [],
@@ -15,6 +16,11 @@ const postsReducer = (state = initialState, action) => {
       return {
         ...state,
         posts: state.posts.filter(post => post.id !== action.postId)
+      }
+    case SHUFFLE_POSTS:
+      return {
+        ...state,
+        posts: shuffleArray(state.posts)
       }
     default:
       return state;

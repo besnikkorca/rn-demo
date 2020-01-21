@@ -1,5 +1,6 @@
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const DELETE_POST = 'DELETE_POST';
+export const SHUFFLE_POSTS = 'SHUFFLE_POSTS';
 
 export const fetchPosts = () => {
   return async dispatch => {
@@ -20,6 +21,7 @@ export const fetchPosts = () => {
   };
 };
 
+export const shufflePosts = () => ({ type: SHUFFLE_POSTS })
 
 export const deletePost = postId => {
   return async dispatch => {
