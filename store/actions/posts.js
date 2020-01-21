@@ -1,4 +1,5 @@
 export const FETCH_POSTS = 'FETCH_POSTS';
+export const DELETE_POST = 'DELETE_POST';
 
 export const fetchPosts = () => {
   return async dispatch => {
@@ -16,5 +17,28 @@ export const fetchPosts = () => {
     } catch (err) {
       throw err;
     }
+  };
+};
+
+
+export const deletePost = postId => {
+  return async dispatch => {
+    try {
+      // in the task description there was no requirement to implement the delete request
+      // but did it anyway since it's just a couple of lines
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/posts/${postId}`,
+        { method: 'DELETE' }
+      );
+
+      if (!response.ok) {
+        throw new Error('Something went wrong');
+      }
+
+      dispatch({ type: DELETE_POST, postId });
+    } catch (err) {
+      // write logs to logging service before rethrowing...
+      throw err;
+    };
   };
 };

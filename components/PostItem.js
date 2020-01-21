@@ -16,7 +16,7 @@ const PostItem = props => {
     <View style={styles.screen}>
       <View style={styles.touchable} >
         <TouchableComp onPress={props.onSelect} useForeground>
-          <View>
+          <View style={styles.content}>
             <TitleText>{props.title}</TitleText>
             <View style={styles.actions}>
               {props.children}
@@ -41,11 +41,14 @@ const styles = StyleSheet.create({
     elevation: 5,
     borderRadius: 10,
     backgroundColor: 'white',
-    padding: 10
   },
   touchable: {
+    width: '100%',
     borderRadius: 10,
     overflow: 'hidden'
+  },
+  content: {
+    padding: 10,
   },
   actions: {
     flexDirection: 'row',
