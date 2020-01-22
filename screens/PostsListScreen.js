@@ -62,7 +62,7 @@ PostsListScreen.navigationOptions = navData => {
     headerTitle: 'All posts',
     headerRight: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
-        <Item title="Cart" iconName={Platform.OS === 'android' ? 'md-shuffle' : 'ios-shuffle'} onPress={handleShufflePosts} />
+        <Item title="Shuffle" iconName={Platform.OS === 'android' ? 'md-shuffle' : 'ios-shuffle'} onPress={handleShufflePosts} />
       </HeaderButtons>
     ),
   };
