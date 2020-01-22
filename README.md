@@ -22,7 +22,11 @@ After this 'Metro Bundler' and 'Expo DevTools' should be running. Depending on y
 
 ## Running the tests
 
-Move into the root directory of the project and run yarn test.
+Move into the root directory of the project and run
+
+```
+yarn test
+```
 
 ## Authors
 
